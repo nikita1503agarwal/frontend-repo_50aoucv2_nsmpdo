@@ -1,71 +1,85 @@
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import Services from './components/Services'
+import Projects from './components/Projects'
+import Testimonials from './components/Testimonials'
+import LeadForm from './components/LeadForm'
+
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
-
-      <div className="relative min-h-screen flex items-center justify-center p-8">
-        <div className="max-w-2xl w-full">
-          {/* Header with Flames icon */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center mb-6">
-              <img
-                src="/flame-icon.svg"
-                alt="Flames"
-                className="w-24 h-24 drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]"
-              />
+    <div className="min-h-screen bg-white">
+      <Navbar />
+      <Hero />
+      <main>
+        <Services />
+        <Projects />
+        <section className="bg-white py-16">
+          <div id="about" className="container mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900" style={{fontFamily:'Montserrat, Poppins'}}>Tentang Perusahaan</h2>
+              <p className="mt-3 text-slate-700">Kami adalah perusahaan konstruksi yang berfokus pada kualitas, keselamatan, dan ketepatan waktu. Sejak berdiri, kami telah menyelesaikan beragam proyek mulai dari residensial, komersial, hingga industri dan infrastruktur. Tim kami terdiri dari profesional berpengalaman dengan sertifikasi dan standar prosedur yang ketat.</p>
+              <ul className="mt-4 space-y-2 text-slate-700 list-disc list-inside">
+                <li>Tepat waktu & transparan</li>
+                <li>Prioritas keselamatan (K3)</li>
+                <li>Tenaga ahli bersertifikat</li>
+                <li>Garansi pekerjaan</li>
+              </ul>
             </div>
-
-            <h1 className="text-5xl font-bold text-white mb-4 tracking-tight">
-              Flames Blue
-            </h1>
-
-            <p className="text-xl text-blue-200 mb-6">
-              Build applications through conversation
-            </p>
-          </div>
-
-          {/* Instructions */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 shadow-xl mb-6">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                1
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Describe your idea</h3>
-                <p className="text-blue-200/80 text-sm">Use the chat panel on the left to tell the AI what you want to build</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                2
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Watch it build</h3>
-                <p className="text-blue-200/80 text-sm">Your app will appear in this preview as the AI generates the code</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                3
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Refine and iterate</h3>
-                <p className="text-blue-200/80 text-sm">Continue the conversation to add features and make changes</p>
-              </div>
+            <div className="rounded-xl border border-slate-200 p-6 bg-neutral-50">
+              <dl className="grid grid-cols-2 gap-6 text-center">
+                <div>
+                  <dt className="text-4xl font-extrabold text-[#F5A623]">10+</dt>
+                  <dd className="text-sm text-slate-600">Tahun beroperasi</dd>
+                </div>
+                <div>
+                  <dt className="text-4xl font-extrabold text-[#F5A623]">120+</dt>
+                  <dd className="text-sm text-slate-600">Proyek selesai</dd>
+                </div>
+                <div>
+                  <dt className="text-4xl font-extrabold text-[#F5A623]">50+</dt>
+                  <dd className="text-sm text-slate-600">Klien B2B</dd>
+                </div>
+                <div>
+                  <dt className="text-4xl font-extrabold text-[#F5A623]">100%</dt>
+                  <dd className="text-sm text-slate-600">Komitmen K3</dd>
+                </div>
+              </dl>
             </div>
           </div>
-
-          {/* Footer */}
-          <div className="text-center">
-            <p className="text-sm text-blue-300/60">
-              No coding required • Just describe what you want
-            </p>
+        </section>
+        <Testimonials />
+        <LeadForm />
+      </main>
+      <footer className="bg-[#1F2937] text-slate-200">
+        <div className="container mx-auto px-6 py-12 grid md:grid-cols-4 gap-8">
+          <div>
+            <div className="w-10 h-10 rounded bg-[#F5A623]" />
+            <p className="mt-3 text-sm text-slate-300">Perusahaan konstruksi terpercaya untuk residensial, komersial, industri, dan infrastruktur.</p>
+          </div>
+          <div>
+            <h4 className="font-semibold text-white">Perusahaan</h4>
+            <ul className="mt-3 space-y-2 text-sm">
+              <li><a href="#about" className="hover:text-white">Tentang</a></li>
+              <li><a href="#services" className="hover:text-white">Layanan</a></li>
+              <li><a href="#projects" className="hover:text-white">Proyek</a></li>
+              <li><a href="#blog" className="hover:text-white">Blog</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold text-white">Kontak</h4>
+            <ul className="mt-3 space-y-2 text-sm">
+              <li>sales@example.com</li>
+              <li>+62 812-3456-7890</li>
+              <li>Jakarta, Indonesia</li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-semibold text-white">Aksi</h4>
+            <a href="#contact" className="mt-3 inline-flex px-4 py-2 rounded-md bg-[#F5A623] text-slate-900 font-semibold hover:bg-amber-400">Request a Quote</a>
           </div>
         </div>
-      </div>
+        <div className="border-t border-white/10 py-4 text-center text-xs text-slate-400">© {new Date().getFullYear()} Constructa. All rights reserved.</div>
+      </footer>
     </div>
   )
 }
